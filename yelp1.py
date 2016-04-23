@@ -11,8 +11,8 @@ print('***** 5 best rated ice cream places in Austin, TX *****')
 
 response = yelp_api.search_query(term='ice cream', location='austin, tx', sort=2, limit=5)
 
-print('region center (lat,long): %s,%s\n' % (response['region']['center']['latitude'], response['region']['center']['longitude']))
+print('region center (lat,long): {},{}\n'.format(response['region']['center']['latitude'], response['region']['center']['longitude']))
 
 for business in response['businesses']:
-    print('%s\n\tYelp ID: %s\n\trating: %g (%d reviews)\n\taddress: %s' % (business['name'], business['id'], business['rating'], business['review_count'], ', '.join(business['location']['display_address'])))
+    print('{}\n\tYelp ID: {}\n\trating: {} ({} reviews)\n\taddress: {}'.format(business['name'], business['id'], business['rating'], business['review_count'], business['location']['display_address']))
 

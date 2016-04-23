@@ -14,5 +14,5 @@ print('***** 5 bike rentals in San Francisco county *****')
 response = yelp_api.search_query(category_filter='bikerentals', bounds='37.678799,-123.125740|37.832371,-122.356979', limit=5)
     
 for business in response['businesses']:
-    print('%s\n\tYelp ID: %s\n\trating: %g (%d reviews)\n\taddress: %s' % (business['name'], business['id'], business['rating'],
-                                                                           business['review_count'], ', '.join(business['location']['display_address'])))
+    print('{}\n\tYelp ID: {}\n\trating: {} ({} reviews)\n\taddress: {}'.format(business['name'], business['id'], business['rating'],
+                                                                               business['review_count'], business['location']['display_address']))

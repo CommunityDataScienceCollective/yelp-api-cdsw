@@ -12,5 +12,5 @@ print("***** selected reviews for Amy's on 6th St. *****")
 business = yelp_api.business_query(id='amys-ice-creams-austin-3')
 
 for review in business['reviews']:
-    print('rating: %d\nexcerpt: %s\n' % (review['rating'], review['excerpt']))
+    print('rating: {}\nexcerpt: {}\n'.format(review['rating'], review['excerpt']))
 
